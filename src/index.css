@@ -307,7 +307,46 @@ td {
 tr:last-child td { border-bottom: none; }
 
 @media (max-width: 640px) {
-  .top-actions { flex-direction: column; }
-  .detail-grid { grid-template-columns: 1fr; }
-  .medal-fields { flex-direction: column; }
+  #root { padding: 12px; }
+
+  .app-title { font-size: 1.3rem; margin: 0 0 16px; }
+
+  .top-actions { flex-direction: column; gap: 10px; }
+
+  .search-input-row input { font-size: 16px; padding: 12px 14px; }
+  .search-input-row button { padding: 12px 16px; font-size: 15px; }
+
+  .view-all-btn { width: 100%; padding: 14px; font-size: 15px; text-align: center; }
+
+  .suggestions li { padding: 14px; font-size: 15px; }
+  .suggestion-meta { font-size: 11px; }
+
+  .detail-panel { padding: 16px; }
+
+  .detail-header h2 { font-size: 1rem; word-break: break-word; }
+  .detail-header .back-btn { padding: 10px 14px; font-size: 14px; }
+
+  .detail-grid { grid-template-columns: 1fr; gap: 8px; }
+  .detail-grid div { font-size: 14px; padding: 10px 12px; }
+
+  .medal-fields { flex-direction: column; gap: 12px; }
+
+  .field select { font-size: 16px; padding: 12px; }
+
+  .save-btn { width: 100%; padding: 14px; font-size: 16px; text-align: center; }
+
+  .all-header { flex-direction: column; gap: 10px; align-items: stretch; }
+  .all-header h2 { font-size: 1rem; text-align: center; }
+  .all-header div { display: flex; gap: 8px; }
+  .all-header button { flex: 1; padding: 12px; font-size: 14px; text-align: center; }
+
+  .age-group { padding: 12px; }
+  .age-group h3 { font-size: 0.95rem; }
+
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -12px; padding: 0 12px; }
+
+  table { font-size: 12px; min-width: 600px; }
+  th, td { padding: 6px 8px; white-space: nowrap; }
+
+  .welcome { margin-top: 40px; font-size: 14px; }
 }

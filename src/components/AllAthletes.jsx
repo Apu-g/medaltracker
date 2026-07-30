@@ -81,6 +81,7 @@ export default function AllAthletes({ onBack }) {
       {[...sorted, ...rest].map((age) => (
         <div key={age} className="age-group">
           <h3>{age.replace('_', ' ')}</h3>
+          <div className="table-wrap">
           <table>
             <thead>
               <tr>
@@ -107,6 +108,7 @@ export default function AllAthletes({ onBack }) {
               ))}
             </tbody>
           </table>
+          </div>
         </div>
       ))}
     </div>
