@@ -11,7 +11,7 @@ export default function SearchBar({ onSelect }) {
   useEffect(() => {
     supabase
       .from('athletes')
-      .select('id, name')
+      .select('id, name, category, age_group')
       .then(({ data }) => {
         if (data) setAllNames(data)
       })
@@ -62,6 +62,9 @@ export default function SearchBar({ onSelect }) {
               }}
             >
               {a.name}
+              <span className="suggestion-meta">
+                {a.category} · {a.age_group?.replace('_', ' ')}
+              </span>
             </li>
           ))}
           {suggestions.length === 0 && (

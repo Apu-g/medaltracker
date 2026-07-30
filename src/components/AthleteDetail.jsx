@@ -60,6 +60,23 @@ export default function AthleteDetail({ athleteId, onBack }) {
       </div>
 
       <div className="medal-fields">
+        {athlete.category === 'official' && (
+          <div className="field">
+            <label>Medal Received</label>
+            <select
+              value={athlete.medal_poomsae || ''}
+              onChange={(e) =>
+                setAthlete({ ...athlete, medal_poomsae: e.target.value || null })
+              }
+            >
+              <option value="">— Select —</option>
+              <option value="Gold">Gold</option>
+              <option value="Silver">Silver</option>
+              <option value="Bronze">Bronze</option>
+              <option value="Participation">Participation</option>
+            </select>
+          </div>
+        )}
         {(athlete.category === 'poomsae' || athlete.category === 'both') && (
           <div className="field">
             <label>Medal (Poomsae)</label>

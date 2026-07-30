@@ -101,6 +101,19 @@ body { margin: 0; }
 
 .suggestions li:last-child { border-bottom: none; }
 .suggestions li:hover { background: #f0f0ff; }
+.suggestions li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.suggestion-meta {
+  font-size: 11px;
+  color: var(--text-light);
+  margin-left: 12px;
+  white-space: nowrap;
+}
+
 .suggestions .no-match {
   color: var(--text-light);
   cursor: default;
