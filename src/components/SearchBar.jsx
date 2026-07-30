@@ -9,6 +9,7 @@ export default function SearchBar({ onSelect }) {
   const ref = useRef()
 
   useEffect(() => {
+    if (!supabase) return
     supabase
       .from('athletes')
       .select('id, name, category, age_group')

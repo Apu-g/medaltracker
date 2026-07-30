@@ -9,6 +9,10 @@ export default function AllAthletes({ onBack }) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    if (!supabase) {
+      setLoading(false)
+      return
+    }
     supabase
       .from('athletes')
       .select('*')
@@ -51,7 +55,7 @@ export default function AllAthletes({ onBack }) {
             Belt: a.belt,
             DOB: a.dob,
             'Medal-Poomsae': a.medal_poomsae || '',
-            'Medal-Kyorugi': isOff ? (a.medal_kyorugi || '') : (a.medal_kyorugi || ''),
+            'Medal-Kyorugi': a.medal_kyorugi || '',
             'Medal-Freestyle': isOff ? (a.medal_freestyle || '') : '',
           })
         }
@@ -77,6 +81,10 @@ export default function AllAthletes({ onBack }) {
           <button className="back-btn" onClick={onBack}>Back</button>
         </div>
       </div>
+
+      {[...sorted, ...rest].length === 0 && (
+        <div className="welcome"><p>No athletes found in database.</p></div>
+      )}
 
       {[...sorted, ...rest].map((age) => (
         <div key={age} className="age-group">

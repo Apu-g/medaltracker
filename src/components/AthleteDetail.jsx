@@ -7,7 +7,7 @@ export default function AthleteDetail({ athleteId, onBack }) {
   const [message, setMessage] = useState('')
 
   useEffect(() => {
-    if (!athleteId) return
+    if (!athleteId || !supabase) return
     supabase
       .from('athletes')
       .select('*')

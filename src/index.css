@@ -135,6 +135,36 @@ body { margin: 0; }
   background: var(--primary-hover);
 }
 
+.config-error {
+  text-align: center;
+  margin-top: 60px;
+  padding: 24px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius);
+}
+
+.config-error h2 {
+  color: #dc2626;
+  font-size: 1.2rem;
+  margin: 0 0 12px;
+}
+
+.config-error p {
+  color: var(--text);
+  margin: 0 0 8px;
+}
+
+.config-error code {
+  display: inline-block;
+  background: #f1f5f9;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 13px;
+  margin: 4px;
+}
+
 .welcome {
   text-align: center;
   color: var(--text-light);

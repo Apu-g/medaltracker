@@ -1,28 +1,26 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import SearchBar from './components/SearchBar'
 import AthleteDetail from './components/AthleteDetail'
 import AllAthletes from './components/AllAthletes'
-import { supabase } from './supabase'
+import { supabase, isConfigured } from './supabase'
 
 export default function App() {
   const [selectedId, setSelectedId] = useState(null)
-  const [view, setView] = useState('search') // 'search' | 'all'
+  const [view, setView] = useState('search')
 
-  useEffect(() => {
-    checkAndSeed()
-  }, [])
-
-  const checkAndSeed = async () => {
-    const { count, error } = await supabase
-      .from('athletes')
-      .select('*', { count: 'exact', head: true })
-    if (error) {
-      console.error('DB check error:', error.message)
-      return
-    }
-    if (count === 0) {
-      console.log('No data found. Please run the seed script first.')
-    }
+  if (!isConfigured) {
+    return (
+      <div className="app">
+        <h1 className="app-title">Tournament Medal Tracker</h1>
+        <div className="config-error">
+          <h2>Supabase Not Configured</h2>
+          <p>Set these environment variables in your Vercel project:</p>
+          <code>VITE_SUPABASE_URL</code>
+          <code>VITE_SUPABASE_ANON_KEY</code>
+          <p>Then redeploy.</p>
+        </div>
+      </div>
+    )
   }
 
   return (
