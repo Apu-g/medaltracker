@@ -39,15 +39,20 @@ export default function AllAthletes({ onBack }) {
       for (const sec of sections) {
         const filtered = athletes.filter((a) => a.category === sec)
         if (filtered.length === 0) continue
-        rows.push({ Athlete: sec.toUpperCase(), Belt: '', DOB: '', 'Medal': '' })
+        const isOff = sec === 'official'
+        rows.push({
+          Athlete: sec.toUpperCase(), Belt: '', DOB: '',
+          'Medal-Poomsae': '', 'Medal-Kyorugi': '',
+          'Medal-Freestyle': ''
+        })
         for (const a of filtered) {
           rows.push({
             Athlete: a.name,
             Belt: a.belt,
             DOB: a.dob,
-            'Medal': sec === 'official' ? (a.medal_poomsae || '') : '',
-            'Medal-Poomsae': sec !== 'official' ? (a.medal_poomsae || '') : '',
-            'Medal-Kyorugi': sec !== 'official' ? (a.medal_kyorugi || '') : '',
+            'Medal-Poomsae': a.medal_poomsae || '',
+            'Medal-Kyorugi': isOff ? (a.medal_kyorugi || '') : (a.medal_kyorugi || ''),
+            'Medal-Freestyle': isOff ? (a.medal_freestyle || '') : '',
           })
         }
         rows.push({})
@@ -85,6 +90,7 @@ export default function AllAthletes({ onBack }) {
                 <th>Category</th>
                 <th>Medal (Poomsae)</th>
                 <th>Medal (Kyorugi)</th>
+                <th>Medal (Freestyle)</th>
               </tr>
             </thead>
             <tbody>
@@ -96,6 +102,7 @@ export default function AllAthletes({ onBack }) {
                   <td>{a.category}</td>
                   <td>{a.medal_poomsae || '-'}</td>
                   <td>{a.medal_kyorugi || '-'}</td>
+                  <td>{a.medal_freestyle || '-'}</td>
                 </tr>
               ))}
             </tbody>
