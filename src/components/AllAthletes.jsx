@@ -35,18 +35,19 @@ export default function AllAthletes({ onBack }) {
     for (const age of allKeys) {
       const athletes = grouped[age]
       const rows = []
-      const sections = ['poomsae', 'kyorugi', 'both']
+      const sections = ['poomsae', 'kyorugi', 'both', 'official']
       for (const sec of sections) {
         const filtered = athletes.filter((a) => a.category === sec)
         if (filtered.length === 0) continue
-        rows.push({ Athlete: sec.toUpperCase(), Belt: '', DOB: '', 'Medal-Poomsae': '', 'Medal-Kyorugi': '' })
+        rows.push({ Athlete: sec.toUpperCase(), Belt: '', DOB: '', 'Medal': '' })
         for (const a of filtered) {
           rows.push({
             Athlete: a.name,
             Belt: a.belt,
             DOB: a.dob,
-            'Medal-Poomsae': a.medal_poomsae || '',
-            'Medal-Kyorugi': a.medal_kyorugi || '',
+            'Medal': sec === 'official' ? (a.medal_poomsae || '') : '',
+            'Medal-Poomsae': sec !== 'official' ? (a.medal_poomsae || '') : '',
+            'Medal-Kyorugi': sec !== 'official' ? (a.medal_kyorugi || '') : '',
           })
         }
         rows.push({})
