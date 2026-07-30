@@ -1,0 +1,300 @@
+:root {
+  --bg: #f5f7fa;
+  --surface: #ffffff;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --text: #374151;
+  --text-light: #6b7280;
+  --border: #e5e7eb;
+  --radius: 8px;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  color: var(--text);
+  background: var(--bg);
+}
+
+body { margin: 0; }
+
+#root {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.app-title {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0 0 20px;
+}
+
+.top-actions {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.search-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+.search-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.search-input-row input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s;
+  box-sizing: border-box;
+}
+
+.search-input-row input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.search-input-row button {
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.search-input-row button:hover {
+  background: #f3f4f6;
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 10;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.suggestions li {
+  padding: 10px 14px;
+  cursor: pointer;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.suggestions li:last-child { border-bottom: none; }
+.suggestions li:hover { background: #f0f0ff; }
+.suggestions .no-match {
+  color: var(--text-light);
+  cursor: default;
+}
+
+.view-all-btn {
+  padding: 10px 20px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.view-all-btn:hover {
+  background: var(--primary-hover);
+}
+
+.welcome {
+  text-align: center;
+  color: var(--text-light);
+  margin-top: 60px;
+}
+
+/* Detail Panel */
+.detail-panel {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 24px;
+  border: 1px solid var(--border);
+  margin-top: 8px;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.detail-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.detail-grid div {
+  padding: 8px 12px;
+  background: #f9fafb;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.medal-fields {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.field {
+  flex: 1;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--text-light);
+}
+
+.field select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 14px;
+  background: var(--surface);
+  outline: none;
+}
+
+.save-btn {
+  padding: 10px 24px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.save-btn:hover { background: var(--primary-hover); }
+.save-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.back-btn {
+  padding: 8px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.back-btn:hover { background: #f3f4f6; }
+
+.message {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #059669;
+  font-weight: 500;
+}
+
+/* All Athletes View */
+.all-view {
+  margin-top: 8px;
+}
+
+.all-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.all-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.all-header div {
+  display: flex;
+  gap: 8px;
+}
+
+.excel-btn {
+  padding: 8px 16px;
+  background: #059669;
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.excel-btn:hover { background: #047857; }
+
+.age-group {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px;
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+
+.age-group h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+th {
+  background: #f3f4f6;
+  padding: 8px 10px;
+  text-align: left;
+  font-weight: 500;
+  border-bottom: 2px solid var(--border);
+}
+
+td {
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+tr:last-child td { border-bottom: none; }
+
+@media (max-width: 640px) {
+  .top-actions { flex-direction: column; }
+  .detail-grid { grid-template-columns: 1fr; }
+  .medal-fields { flex-direction: column; }
+}

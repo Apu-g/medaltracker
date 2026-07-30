@@ -1,0 +1,7 @@
+node_modules
+dist
+.env
+*.mjs
+!vite.config.mjs
+seed.json
+setup.sql
