@@ -57,7 +57,7 @@ export default function AllAthletes({ onBack }) {
           serial += 1
           rows.push({
             'S.No': serial,
-            Branch: getBranch(a),
+            Branch: getBranch(a) || 'Hennur',
             Athlete: a.name,
             Belt: a.belt,
             DOB: a.dob,
@@ -113,7 +113,7 @@ export default function AllAthletes({ onBack }) {
               {grouped[age].map((a, i) => (
                 <tr key={a.id}>
                   <td>{i + 1}</td>
-                  <td>{getBranch(a) || '-'}</td>
+                  <td>{getBranch(a) || 'Hennur'}</td>
                   <td>{a.name}</td>
                   <td>{a.belt}</td>
                   <td>{a.dob}</td>
