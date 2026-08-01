@@ -1,8 +1,20 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../supabase'
 import * as XLSX from 'xlsx'
+import BRANCHES from '../data/branches'
 
 const AGE_ORDER = ['Under_6', 'Under_8', 'Under_10', 'Under_12', 'Under_14', 'Under_18']
+
+const normalize = (s) => (s || '').toLowerCase().replace(/[^a-z0-9]/g, '')
+
+const getBranch = (a) => {
+  const byName = BRANCHES[normalize(a.name)]
+  if (byName) return byName.branch
+  const dob = (a.dob || '').slice(0, 10)
+  const hits = Object.values(BRANCHES).filter((b) => b.dob === dob)
+  if (hits.length === 1) return hits[0].branch
+  return ''
+}
 
 export default function AllAthletes({ onBack }) {
   const [grouped, setGrouped] = useState({})
@@ -40,23 +52,24 @@ export default function AllAthletes({ onBack }) {
       const athletes = grouped[age]
       const rows = []
       const sections = ['poomsae', 'kyorugi', 'both', 'official']
+      let serial = 0
       for (const sec of sections) {
         const filtered = athletes.filter((a) => a.category === sec)
         if (filtered.length === 0) continue
-        const isOff = sec === 'official'
         rows.push({
-          Athlete: sec.toUpperCase(), Belt: '', DOB: '',
-          'Medal-Poomsae': '', 'Medal-Kyorugi': '',
-          'Medal-Freestyle': ''
+          'S.No': '', Branch: '', Athlete: sec.toUpperCase(), Belt: '', DOB: '',
+          'Medal-Poomsae': '', 'Medal-Kyorugi': ''
         })
         for (const a of filtered) {
+          serial += 1
           rows.push({
+            'S.No': serial,
+            Branch: getBranch(a),
             Athlete: a.name,
             Belt: a.belt,
             DOB: a.dob,
             'Medal-Poomsae': a.medal_poomsae || '',
             'Medal-Kyorugi': a.medal_kyorugi || '',
-            'Medal-Freestyle': isOff ? (a.medal_freestyle || '') : '',
           })
         }
         rows.push({})
@@ -93,25 +106,27 @@ export default function AllAthletes({ onBack }) {
           <table>
             <thead>
               <tr>
+                <th>S.No</th>
+                <th>Branch</th>
                 <th>Name</th>
                 <th>Belt</th>
                 <th>DOB</th>
                 <th>Category</th>
                 <th>Medal (Poomsae)</th>
                 <th>Medal (Kyorugi)</th>
-                <th>Medal (Freestyle)</th>
               </tr>
             </thead>
             <tbody>
-              {grouped[age].map((a) => (
+              {grouped[age].map((a, i) => (
                 <tr key={a.id}>
+                  <td>{i + 1}</td>
+                  <td>{getBranch(a) || '-'}</td>
                   <td>{a.name}</td>
                   <td>{a.belt}</td>
                   <td>{a.dob}</td>
                   <td>{a.category}</td>
                   <td>{a.medal_poomsae || '-'}</td>
                   <td>{a.medal_kyorugi || '-'}</td>
-                  <td>{a.medal_freestyle || '-'}</td>
                 </tr>
               ))}
             </tbody>
