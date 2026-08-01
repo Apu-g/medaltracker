@@ -230,5 +230,169 @@ export default {
   "lokinnj": {
     "branch": "Hennur",
     "dob": "2015-01-01"
+  },
+  "aaratrikaallimman": {
+    "branch": "DHL",
+    "dob": ""
+  },
+  "chaitrirajkumar": {
+    "branch": "DHL",
+    "dob": ""
+  },
+  "ehanbackerp": {
+    "branch": "DHL",
+    "dob": "2017-12-05"
+  },
+  "mmokshagna": {
+    "branch": "DHL",
+    "dob": "2016-10-26"
+  },
+  "saishikhar": {
+    "branch": "DHL",
+    "dob": "2016-07-29"
+  },
+  "abhyarajkumar": {
+    "branch": "DHL",
+    "dob": "2014-07-19"
+  },
+  "shivangichakraborty": {
+    "branch": "DHL",
+    "dob": "2014-10-24"
+  },
+  "khushivarshini": {
+    "branch": "DHL",
+    "dob": "2013-12-06"
+  },
+  "aaanyrasaroh": {
+    "branch": "GCIS",
+    "dob": "2011-02-04"
+  },
+  "karanr": {
+    "branch": "GCIS",
+    "dob": "2009-12-05"
+  },
+  "shauryasshetty": {
+    "branch": "GCIS",
+    "dob": "2009-12-14"
+  },
+  "yashamithadechamma": {
+    "branch": "GCIS",
+    "dob": "2013-02-06"
+  },
+  "hemakshichaurasia": {
+    "branch": "GCIS",
+    "dob": "2012-03-03"
+  },
+  "princekcherian": {
+    "branch": "GCIS",
+    "dob": "2012-03-12"
+  },
+  "mirareddymula": {
+    "branch": "TKHS",
+    "dob": "2015-04-28"
+  },
+  "vaishnavigovind": {
+    "branch": "TKHS",
+    "dob": "2015-11-09"
+  },
+  "ishanadahasahasra": {
+    "branch": "TKHS",
+    "dob": "2015-10-22"
+  },
+  "mannatchugh": {
+    "branch": "TKHS",
+    "dob": "2010-09-09"
+  },
+  "vismayadama": {
+    "branch": "TKHS",
+    "dob": "2016-07-03"
+  },
+  "rohank": {
+    "branch": "TKHS",
+    "dob": "2015-08-21"
+  },
+  "shanayasarahgeorge": {
+    "branch": "TKHS",
+    "dob": "2011-01-24"
+  },
+  "taranyasandeep": {
+    "branch": "TKHS",
+    "dob": "2012-10-13"
+  },
+  "riyamenezes": {
+    "branch": "TKHS",
+    "dob": "2011-03-14"
+  },
+  "keiamathew": {
+    "branch": "TKHS",
+    "dob": "2012-05-26"
+  },
+  "shraddhashamsundar": {
+    "branch": "TKHS",
+    "dob": "2012-07-05"
+  },
+  "shauryaroa": {
+    "branch": "TKHS",
+    "dob": "2012-01-04"
+  },
+  "alinatareeqshaikh": {
+    "branch": "TKHS",
+    "dob": "2010-11-02"
+  },
+  "shrikrishnamanikandan": {
+    "branch": "TKHS",
+    "dob": "2011-01-28"
+  },
+  "saadhikesh": {
+    "branch": "NavaGokulam",
+    "dob": "2020-02-03"
+  },
+  "mohammedzainasad": {
+    "branch": "CBR",
+    "dob": "2017-08-11"
+  },
+  "abdullahkhan": {
+    "branch": "TPS",
+    "dob": "2017-08-18"
+  },
+  "jugrajsinghrisam": {
+    "branch": "Rohan Upavan",
+    "dob": "2018-12-04"
+  },
+  "marushanmannan": {
+    "branch": "Hennur",
+    "dob": "2014-07-18"
+  },
+  "avyukthbiyer": {
+    "branch": "Hennur",
+    "dob": "2014-06-06"
+  },
+  "irasrineet": {
+    "branch": "Hennur",
+    "dob": "2013-02-14"
+  },
+  "ilaynalasijavijoy": {
+    "branch": "CBR",
+    "dob": "2014-08-08"
+  },
+  "shauryarao": {
+    "branch": "Hennur",
+    "dob": "2015-09-15"
+  },
+  "manukurucharanteja": {
+    "branch": "Hennur",
+    "dob": "2013-06-04"
+  },
+  "harikishan": {
+    "branch": "Hennur",
+    "dob": "2011-01-28"
+  },
+  "avehivadhavkar": {
+    "branch": "TKHS",
+    "dob": ""
+  },
+  "khushanshjainilshah": {
+    "branch": "BlueBerry",
+    "dob": ""
   }
 }

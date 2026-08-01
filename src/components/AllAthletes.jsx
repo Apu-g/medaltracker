@@ -7,14 +7,7 @@ const AGE_ORDER = ['Under_6', 'Under_8', 'Under_10', 'Under_12', 'Under_14', 'Un
 
 const normalize = (s) => (s || '').toLowerCase().replace(/[^a-z0-9]/g, '')
 
-const getBranch = (a) => {
-  const byName = BRANCHES[normalize(a.name)]
-  if (byName) return byName.branch
-  const dob = (a.dob || '').slice(0, 10)
-  const hits = Object.values(BRANCHES).filter((b) => b.dob === dob)
-  if (hits.length === 1) return hits[0].branch
-  return ''
-}
+const getBranch = (a) => BRANCHES[normalize(a.name)]?.branch || ''
 
 export default function AllAthletes({ onBack }) {
   const [grouped, setGrouped] = useState({})
