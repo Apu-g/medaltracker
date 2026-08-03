@@ -2,6 +2,7 @@ import { useState } from 'react'
 import SearchBar from './components/SearchBar'
 import AthleteDetail from './components/AthleteDetail'
 import AllAthletes from './components/AllAthletes'
+import MedalCounter from './components/MedalCounter'
 import { supabase, isConfigured } from './supabase'
 
 export default function App() {
@@ -26,6 +27,8 @@ export default function App() {
   return (
     <div className="app">
       <h1 className="app-title">Tournament Medal Tracker</h1>
+
+      <MedalCounter />
 
       <div className="top-actions">
         <SearchBar onSelect={(id) => { setSelectedId(id); setView('search') }} />
