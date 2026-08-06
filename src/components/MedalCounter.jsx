@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../supabase'
 
-const MEDAL_COLUMNS = ['medal_poomsae', 'medal_kyorugi', 'medal_freestyle']
+const MEDAL_COLUMNS = ['medal_poomsae', 'medal_kyorugi']
 const TYPES = ['Gold', 'Silver', 'Bronze']
 
 export default function MedalCounter() {

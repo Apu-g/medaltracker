@@ -44,7 +44,7 @@ export default function AllAthletes({ onBack }) {
     for (const age of allKeys) {
       const athletes = grouped[age]
       const rows = []
-      const sections = ['poomsae', 'kyorugi', 'both', 'official']
+      const sections = ['poomsae', 'kyorugi', 'both']
       let serial = 0
       for (const sec of sections) {
         const filtered = athletes.filter((a) => a.category === sec)

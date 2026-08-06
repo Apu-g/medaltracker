@@ -34,7 +34,6 @@ export default function AthleteDetail({ athleteId, onBack }) {
       .update({
         medal_poomsae: athlete.medal_poomsae || null,
         medal_kyorugi: athlete.medal_kyorugi || null,
-        medal_freestyle: athlete.medal_freestyle || null,
       })
       .eq('id', athlete.id)
 
@@ -61,55 +60,6 @@ export default function AthleteDetail({ athleteId, onBack }) {
       </div>
 
       <div className="medal-fields">
-        {athlete.category === 'official' && (
-          <>
-            <div className="field">
-              <label>Medal (Poomsae)</label>
-              <select
-                value={athlete.medal_poomsae || ''}
-                onChange={(e) =>
-                  setAthlete({ ...athlete, medal_poomsae: e.target.value || null })
-                }
-              >
-                <option value="">— Select —</option>
-                <option value="Gold">Gold</option>
-                <option value="Silver">Silver</option>
-                <option value="Bronze">Bronze</option>
-                <option value="Participation">Participation</option>
-              </select>
-            </div>
-            <div className="field">
-              <label>Medal (Kyorugi)</label>
-              <select
-                value={athlete.medal_kyorugi || ''}
-                onChange={(e) =>
-                  setAthlete({ ...athlete, medal_kyorugi: e.target.value || null })
-                }
-              >
-                <option value="">— Select —</option>
-                <option value="Gold">Gold</option>
-                <option value="Silver">Silver</option>
-                <option value="Bronze">Bronze</option>
-                <option value="Participation">Participation</option>
-              </select>
-            </div>
-            <div className="field">
-              <label>Medal (Freestyle)</label>
-              <select
-                value={athlete.medal_freestyle || ''}
-                onChange={(e) =>
-                  setAthlete({ ...athlete, medal_freestyle: e.target.value || null })
-                }
-              >
-                <option value="">— Select —</option>
-                <option value="Gold">Gold</option>
-                <option value="Silver">Silver</option>
-                <option value="Bronze">Bronze</option>
-                <option value="Participation">Participation</option>
-              </select>
-            </div>
-          </>
-        )}
         {(athlete.category === 'poomsae' || athlete.category === 'both') && (
           <div className="field">
             <label>Medal (Poomsae)</label>
